@@ -1,0 +1,5 @@
+In high performance computing, one often deals with very large matrices that would be exorbitantly expensive to compute using direct solvers. One method of handling these matrices is to decompose them into smaller matrices that can then be approximated iteratively and in parallel. The method I will focus on is called Additive Shwarz.
+	
+This method splits the domain into smaller sub-domains such that the values at the boundaries between the two sub-domains are equivalent. This is enforced iteratively by taking an initial guess at the boundary value, usually 0, and solving the sub-domains individually. We can then iterate, updating our guess each time, until we converge to within a given tolerance.
+
+Additive Shwarz motivates and extends into other methods, some of which I have used in my research.
