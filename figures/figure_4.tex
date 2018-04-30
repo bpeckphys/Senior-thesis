@@ -1,0 +1,94 @@
+\begin {figure}[htbp]
+  \centering
+    \begin{tikzpicture}
+\tikzset{every node}=[draw,shape=circle]
+
+\draw (1,0) node[circle,inner sep=2pt,label=above:$u_{10}^0$](b){} -- (1,-4);
+\draw (2,0) node[circle,inner sep=2pt,label=above:$u_{20}^0$](b){} -- (2,-4);
+\draw (3,0) node[circle,inner sep=2pt,label=above:$u_{30}^0$](b){} -- (3,-4);
+\draw (4,0) node[circle,inner sep=2pt,label=above:$u_{40}^0$](b){} -- (4,-4);
+
+\draw (8,0) node[circle,inner sep=2pt,label=above:$u_{00}^1$](b){} -- (8,-4);
+\draw (9,0) node[circle,inner sep=2pt,label=above:$u_{10}^1$](b){} -- (9,-4);
+\draw (10,0) node[circle,inner sep=2pt,label=above:$u_{20}^1$](b){} -- (10,-4);
+\draw (11,0) node[circle,inner sep=2pt,label=above:$u_{30}^1$](b){} -- (11,-4);
+
+\draw (0,-1) node[circle,inner sep=2pt,label=above:$u_{01}^0$](a){} -- (1,-1) 
+node[circle,fill,inner sep=1pt,label=above:$u_{11}^0$](b){};
+\draw (1,-1) node[circle,fill,inner sep=1pt](a){} -- (2,-1) 
+node[circle,fill,inner sep=1pt,label=above:$u_{21}^0$](b){};
+\draw (2,-1) node[circle,fill,inner sep=1pt](a){} -- (3,-1) 
+node[circle,fill,inner sep=1pt,label=above:$u_{31}^0$](b){};
+\draw (3,-1) node[circle,fill,inner sep=1pt](a){} -- (4,-1) 
+node[circle,fill,inner sep=1pt,label=above:$u_{41}^0$](b){};
+\draw (4,-1) node[circle,fill,inner sep=1pt](a){} -- (5,-1) 
+node[circle,inner sep=2pt,label=above:$u_{51}^0$](b){};
+
+\draw (7,-1) node[circle,inner sep=2pt,label=above:$u_{-11}^1$](a){} -- (8,-1) 
+node[circle,fill,inner sep=1pt,label=above:$u_{01}^1$](b){};
+\draw (8,-1) node[circle,fill,inner sep=1pt](a){} -- (9,-1) 
+node[circle,fill,inner sep=1pt,label=above:$u_{11}^1$](b){};
+\draw (9,-1) node[circle,fill,inner sep=1pt](a){} -- (10,-1) 
+node[circle,fill,inner sep=1pt,label=above:$u_{21}^1$](b){};
+\draw (10,-1) node[circle,fill,inner sep=1pt](a){} -- (11,-1) 
+node[circle,fill,inner sep=1pt,label=above:$u_{31}^1$](b){};
+\draw (11,-1) node[circle,fill,inner sep=1pt](a){} -- (12,-1) 
+node[circle,inner sep=2pt,label=above:$u_{41}^1$](b){};
+
+\draw (0,-2) node[circle,inner sep=2pt,label=above:$u_{02}^0$,label=left:\LARGE$\boldsymbol\Omega_0$](a){} -- (1,-2) 
+node[circle,fill,inner sep=1pt,label=above:$u_{12}^0$](b){};
+\draw (1,-2) node[circle,fill,inner sep=1pt](a){} -- (2,-2) 
+node[circle,fill,inner sep=1pt,label=above:$u_{22}^0$](b){};
+\draw (2,-2) node[circle,fill,inner sep=1pt](a){} -- (3,-2) 
+node[circle,fill,inner sep=1pt,label=above:$u_{32}^0$](b){};
+\draw (3,-2) node[circle,fill,inner sep=1pt](a){} -- (4,-2) 
+node[circle,fill,inner sep=1pt,label=above:$u_{42}^0$](b){};
+\draw (4,-2) node[circle,fill,inner sep=1pt](a){} -- (5,-2) 
+node[circle,inner sep=2pt,label=above:$u_{52}^0$](b){};
+
+\draw (7,-2) node[circle,inner sep=2pt,label=above:$u_{-12}^1$](a){} -- (8,-2) 
+node[circle,fill,inner sep=1pt,label=above:$u_{02}^1$](b){};
+\draw (8,-2) node[circle,fill,inner sep=1pt](a){} -- (9,-2) 
+node[circle,fill,inner sep=1pt,label=above:$u_{12}^1$](b){};
+\draw (9,-2) node[circle,fill,inner sep=1pt](a){} -- (10,-2) 
+node[circle,fill,inner sep=1pt,label=above:$u_{22}^1$](b){};
+\draw (10,-2) node[circle,fill,inner sep=1pt](a){} -- (11,-2) 
+node[circle,fill,inner sep=1pt,label=above:$u_{32}^1$](b){};
+\draw (11,-2) node[circle,fill,inner sep=1pt](a){} -- (12,-2) 
+node[circle,inner sep=2pt,label=above:$u_{42}^1$,label=right:\LARGE$\boldsymbol\Omega_1$](b){};
+
+\draw (0,-3) node[circle,inner sep=2pt,label=above:$u_{03}^0$](a){} -- (1,-3) 
+node[circle,fill,inner sep=1pt,label=above:$u_{13}^0$](b){};
+\draw (1,-3) node[circle,fill,inner sep=1pt](a){} -- (2,-3) 
+node[circle,fill,inner sep=1pt,label=above:$u_{23}^0$](b){};
+\draw (2,-3) node[circle,fill,inner sep=1pt](a){} -- (3,-3) 
+node[circle,fill,inner sep=1pt,label=above:$u_{33}^0$](b){};
+\draw (3,-3) node[circle,fill,inner sep=1pt](a){} -- (4,-3) 
+node[circle,fill,inner sep=1pt,label=above:$u_{43}^0$](b){};
+\draw (4,-3) node[circle,fill,inner sep=1pt](a){} -- (5,-3) 
+node[circle,inner sep=2pt,label=above:$u_{53}^0$](b){};
+
+\draw (7,-3) node[circle,inner sep=2pt,label=above:$u_{-13}^1$](a){} -- (8,-3) 
+node[circle,fill,inner sep=1pt,label=above:$u_{03}^1$](b){};
+\draw (8,-3) node[circle,fill,inner sep=1pt](a){} -- (9,-3) 
+node[circle,fill,inner sep=1pt,label=above:$u_{13}^1$](b){};
+\draw (9,-3) node[circle,fill,inner sep=1pt](a){} -- (10,-3) 
+node[circle,fill,inner sep=1pt,label=above:$u_{23}^1$](b){};
+\draw (10,-3) node[circle,fill,inner sep=1pt](a){} -- (11,-3) 
+node[circle,fill,inner sep=1pt,label=above:$u_{33}^1$](b){};
+\draw (11,-3) node[circle,fill,inner sep=1pt](a){} -- (12,-3) 
+node[circle,inner sep=2pt,label=above:$u_{43}^1$](b){};
+
+\draw (1,-4) node[circle,inner sep=2pt,label=above:$u_{14}^0$](b){};
+\draw (2,-4) node[circle,inner sep=2pt,label=above:$u_{24}^0$](b){};
+\draw (3,-4) node[circle,inner sep=2pt,label=above:$u_{34}^0$](b){};
+\draw (4,-4) node[circle,inner sep=2pt,label=above:$u_{44}^0$](b){};
+
+\draw (8,-4) node[circle,inner sep=2pt,label=above:$u_{04}^1$](b){};
+\draw (9,-4) node[circle,inner sep=2pt,label=above:$u_{14}^1$](b){};
+\draw (10,-4) node[circle,inner sep=2pt,label=above:$u_{24}^1$](b){};
+\draw (11,-4) node[circle,inner sep=2pt,label=above:$u_{34}^1$](b){};
+
+   \end{tikzpicture}
+     \caption{2-D box after domain decomposition. \label{fig:2dgriddecomp1}}
+  \end{figure}

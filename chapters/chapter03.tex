@@ -1,0 +1,62 @@
+The most natural place to start, although not the easiest to motivate, is the 1-dimensional problem. I will show that the equations using a second-order central-difference approximation along a 1-dimensional domain interface ensure that the values at the boundary of two nodes are equivalent. Subsequently, I will demonstrate that this extends naturally to 2-dimensional problems.
+
+We start by analyzing figure \ref{fig:1dgrid} which depicts a line and decomposing it into two sub-domains in the subsequent figure \ref{fig:1dgriddecomp}. Nodes $u_0$ and $u_8$ are ghost nodes used to solve along the line from $u_1$ to $u_7$. Each node can be approximated using the central-difference approximation
+
+\begin{equation}
+	u''(x_{j}) \cong \frac{1}{h^2}[u_{j-1} - 2u_{j} + u_{j+1}]
+\end{equation} 
+
+\input{figures/figure_1}
+
+In figure \ref{fig:1dgriddecomp}, the domain has been decomposed into two parts, $\Omega_0$ and $\Omega_1$, that share the boundary $u_4^0 = u_0^1$. Each of the sub-domains then have two ghost nodes such that on the first iteration $u_5^0$ is set to an initial guess and on each subsequent iteration $u_{-1}^1$ receives its value from $u_3^0$ and $u_5^0$ receives its value from $u_1^1$.
+\input{figures/figure_2}
+
+This decomposition leads to the following equations on the boundary when solving the Poisson problem where $f$ is the exact solution at each point.
+\input{eqsystems/sys_1}
+
+From these equations we know that $f_4^0 = f_1^1$ and since at each iteration $u_{-1}^1$ receives its value from $u_3^0$ and $u_5^0$ receives its value from $u_1^1$ we see that the equations become $u_3^0 - 2u_4^0 + u_1^1 = f_4^0 = u_3^0 - 2u_0^1 + u_1^1$ and thus $u_4^0 = u_0^1$.
+
+Now we will attempt the 2-D case. We start by making a box and decomposing it into two sub-domains as seen in the subsequent figures. I have adopted the notation of $u_{xy}$ where x is the x-coordinate and y is the y-coordinate. Nodes along $x = 0$ and $4$ as-well-as nodes along $y = 0$ and $8$ are ghost nodes. We can approximate each node using the central-difference approximation
+
+\begin{equation}
+	u''(x_{j}) \cong \frac{1}{h^2}[u_{i-1,j} + u_{i+1,j} - 4u_{i,j} + u_{i,j-1} + u_{i,j+1}]
+\end{equation}
+
+\input{figures/figure_3}
+
+Similar to the 1-D case, the domain has been decomposed into two parts, $\Omega_0$ and $\Omega_1$, that share the boundary $u_{4y}^0 = u_{0y}^1$. Each of the sub-domains then have ghost nodes such that for each j, $u_{-1,j}^1$ receives its value from $u_{3,j}^0$ and $u_{5,j}^0$ receives its value from $u_{1,j}^1$ every iteration.
+\input{figures/figure_4}
+
+\pagebreak
+The resulting decomposition yields the following equations on the boundary for the Poisson problem.
+\input{eqsystems/sys_2}
+
+From these equations we know that for each j, $f_{4,j}^0 = f_{0,j}^1$ and since at each iteration $u_{-1,j}^1$ receives its value from $u_{3,j}^0$ and $u_{5,j}^0$ receives its value from $u_{1,j}^1$ we see that after reducing, the equations become:
+\input{eqsystems/sys_4}
+
+Furthermore, since we have boundary conditions, the ghost nodes on the boundary are known to be equivalent. That is, $u_{40}^0 = u_{00}^1$ and $u_{44}^0 = u_{04}^1$ which gives the following system of equations.
+\input{eqsystems/sys_5}
+
+Now if we both solve \ref{eq:3.3} and \ref{eq:3.5} for $u_{02}^1$ and $u_{42}^0$ and plug into \ref{eq:3.4}, as-well-as subtract \ref{eq:3.5} from \ref{eq:3.3} we get
+\input{eqsystems/sys_6}
+
+Adding and subtracting these equations together and then plugging into \ref{eq:3.4} we arrive at the final result we are looking for. 
+\input{eqsystems/sys_7}
+
+For the sake of thoroughness, we will extend this to 4 sub-domains as shown in the next two figures. Similar to our proof that the boundary values between $\Omega_0$ and $\Omega_1$ are equivalent, it can be shown that the boundary values between $\Omega_0$ and $\Omega_2$ are equivalent as are those between $\Omega_1$ and $\Omega_3$. What remains then is to show that the boundary value shared by all 4 nodes is equivalent for each; that is, $u_{43}^0 = u_{03}^1 = u_{40}^2 = u_{00}^3$.
+\input{figures/figure_5}
+\input{figures/figure_6}
+
+\pagebreak
+Taking the values of the ghost nodes from their adjacent sub-domains and knowing that the function is equivalent on $f_{43}^0, f_{03}^1, f_{40}^2,$ and $f_{00}^3$, we obtain the following system of equations.
+\input{eqsystems/sys_8}
+
+Similarly, we know that ghost nodes sharing a boundary have the same value as shown below.
+\input{eqsystems/sys_9}
+
+Plugging these in, we get that $u_{43}^0 = u_{03}^1 = u_{40}^2 = u_{00}^3$ which is what we expected.
+
+
+
+
+

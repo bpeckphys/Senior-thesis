@@ -7,54 +7,49 @@
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 \fancyhead{}
-\fancyhead[RO,LE]{Domain Decomposition as a Finite Difference Method to Solve Applications of the Poisson Problem}
+\fancyhead[RO,LE]{Domain Decomposition as a Method to Solve the Poisson Problem}
 \fancyfoot{}
 \fancyfoot[LE,RO]{\thepage}
 \fancyfoot[LO,CE]{Chapter \thechapter}
-\fancyfoot[CO,RE]{Author Name}
+\fancyfoot[CO,RE]{Brenton Peck}
 \renewcommand{\headrulewidth}{0.4pt}
 \renewcommand{\footrulewidth}{0.4pt}
 \usepackage{caption}
-\usepackage{subcaption}
-\usepackage[style=alphabetic]{biblatex}
+\usepackage[backend=bibtex8]{biblatex}
 \addbibresource{chapters/references.bib}
+\usepackage{amsmath}
+\usepackage{tikz, subfigure}
+\usetikzlibrary{arrows}
+\tikzstyle{every node}=[draw,shape=circle]
+\usepackage{mathtools}
+\usepackage{listings}
 
 \begin{document}
 
 \input{chapters/title}
 
-\input{chapters/abstract}
-
-\chapter*{Dedication}
-Who is this dedicated to?
-
-\chapter*{Declaration}
-I declare that...
-
 \chapter*{Acknowledgments}
 \input{chapters/acknowledgments}
 
 \tableofcontents
-\listoffigures
-\listoftables
 
 \chapter{Introduction}
 \input{chapters/introduction}
 
-\chapter{Chapter Two Title}
+\chapter{Motivations and Background}
 \input{chapters/chapter02}
 
-\chapter{Chapter Three Title}
+\chapter{Iterative Methods}
 \input{chapters/chapter03}
 
-\chapter{Chapter Four Title}
+\chapter{Motivating Further Methods}
 \input{chapters/chapter04}
 
 \chapter{Conclusion}
 \input{chapters/conclusion}
 
 \appendix
-\chapter{Appendix Title}
+\chapter{Code}
 \input{chapters/appendix}
 
 \printbibliography 
