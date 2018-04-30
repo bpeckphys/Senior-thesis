@@ -5,7 +5,6 @@
 #include <stdio.h>
 
 // Define the function
-
 double foo(double x){
     return -1*(2*M_PI)*(2*M_PI)*cos(2*M_PI*x);
 }
@@ -23,27 +22,22 @@ int main(int argc, char** argv){
     MPI_Comm_size(MPI_COMM_WORLD, &nprocs);
     
     // Initialize global variables
-
     int itermax = 5; // quick break for when itermax is not specified
     int p, M, N, err;
     double tol;
 
     // Read command line
-
     read_int(argc, argv, "-n", &N, &err);        
     read_int(argc, argv, "--itermax", &itermax, &err);
     read_double(argc, argv, "--tol", &tol, &err);
  
-
     // Set intervals
-    
     M=N/nprocs;
     double sintvl = 1.0/nprocs;
     double a = sintvl*rank;
     double h = 1.0/N;
 
     // Initialize vectors
-
     double u[M];
     double prevu[M];
     double f[M];
@@ -54,7 +48,6 @@ int main(int argc, char** argv){
     }
 
     // Initialize Boundary Conditions
-
     if(rank == 0){
         u[0] = 1;
     }
