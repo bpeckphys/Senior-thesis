@@ -1,0 +1,41 @@
+\begin {figure}[htbp]
+  \centering
+    \begin{tikzpicture}[>=triangle 60]
+\tikzset{every node}=[draw,shape=circle]
+
+\draw (0.5,-0.5)  -- (0.5,0.5)
+node[draw=none,rectangle,label=above:$u^0|_{x=0}$](a){};
+\draw (0.5,-0.2) node[draw=none,rectangle,label=below:$0$](a){};
+\draw (0,0) node[circle,inner sep=2pt,label=above:$u_0^0$,label=left:\LARGE$\boldsymbol\Omega_0$](a){} -- (1,0) 
+node[circle,fill,inner sep=1pt,label=above:$u_1^0$](b){};
+\draw (1,0) node[circle,fill,inner sep=1pt](a){} -- (2,0) 
+node[circle,fill,inner sep=1pt,label=above:$u_2^0$](b){};
+\draw (1.5,0.25) -- (1.5,-0.25);
+\draw (2,0) node[circle,fill,inner sep=1pt](a){} -- (3,0) 
+node[circle,fill,inner sep=1pt,label=above:$u_3^0$](b){};
+\draw (2.5,0.25) -- (2.5,-0.25);
+\draw (3,0) node[circle,fill,inner sep=1pt](a){} -- (3.5,0);
+\draw (3.5,-0.5) -- (3.5,0.5);
+\draw (3.5,0.1) node[draw=none,rectangle,label=above:${u^0|_{x=\Gamma}=\gamma}$](a){};
+\draw (3.5,-0.2) node[draw=none,rectangle,label=below:$\Gamma$](a){};
+
+\draw[yshift=-1.5cm] (3.5,0) -- (4,0) 
+node[circle,fill,inner sep=1pt,label=below:$u_{0}^1$](b){};
+\draw[yshift=-1.5cm] (3.5,0.5) -- (3.5,-0.5);
+\draw[yshift=-1.5cm] (3.5,-0.1) node[draw=none,rectangle,label=below:${u^1|_{x=\Gamma} = \gamma}$](a){};
+\draw[yshift=-1.5cm] (4,0) node[circle,fill,inner sep=1pt](a){} -- (5,0) 
+node[circle,fill,inner sep=1pt,label=below:$u_{1}^1$](b){};
+\draw[yshift=-1.5cm] (4.5,0.25) -- (4.5,-0.25);
+\draw[yshift=-1.5cm] (5,0) node[circle,fill,inner sep=1pt](a){} -- (6,0) 
+node[circle,fill,inner sep=1pt,label=below:$u_{2}^1$](b){};
+\draw[yshift=-1.5cm] (5.5,0.25) -- (5.5,-0.25);
+\draw[yshift=-1.5cm] (6,0) node[circle,fill,inner sep=1pt](a){} -- (7,0)
+node[circle,inner sep=2pt,label=below:$u_{4}^1$,label=right:\LARGE$\boldsymbol\Omega_1$](b){};
+\draw[yshift=-1.5cm] (6.5,0.2) node[draw=none,rectangle,label=above:$1$](a){};
+\draw[yshift=-1.5cm] (6.5,0.5) -- (6.5,-0.5)
+node[draw=none,rectangle,label=below:$u^1|_{x=1}$](a){};
+
+
+   \end{tikzpicture}
+     \caption{1-D line after domain decomposition. \label{fig:4.2}}
+  \end{figure}

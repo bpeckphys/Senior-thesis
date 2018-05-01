@@ -1,1 +1,18 @@
-Using an overlapping domain method works well for some situations; however, there are situations that arise in which we would like to de-couple the sub-domains entirely. This can be done by solving the Schur Complement system for the boundary values.
+Using an overlapping domain method works well for some situations; however, there are situations that arise in which we would like to de-couple the sub-domains entirely. To motivate this method I will switch to a cell-centered approach. Starting in 1-D again we can visualize this using figure \ref{fig:4.1} which depicts a straight line with nodes at the center of each cell. We use the same central difference approximation we showed in equation \ref{eq:3.1}. The system boundaries are indicated at $u|_{x=0}$ and $u|_{x=1}$. For the non-overlapping case we define the boundary between two sub-domains as $\Gamma$. The value of $u$ on the boundary is then $\gamma$, so I have indicated the interior boundary $\Gamma$ at ${u|_{\Gamma} = \gamma}$.
+
+\input{figures/figure_7}
+
+We can define $\gamma$ to be the average of its neighbor nodes as shown in equation \ref{eq:4.1}.
+
+\begin{equation}\label{eq:4.1}
+	\gamma = \frac{u_{j} + u_{j+1}}{2}
+\end{equation}
+
+
+
+In figure \ref{fig:4.2} we have decomposed the domain into two sub-domains, $\Omega_0$ and $\Omega_1$. Unlike the node-centered case, the two sub-domains do not share any nodes or receive any values for ghost nodes.
+
+\input{figures/figure_8}
+
+
+This can be done by solving the Schur Complement system for the boundary values.

@@ -1,0 +1,36 @@
+\begin {figure}[htbp]
+  \centering
+    \begin{tikzpicture}
+\tikzset{every node}=[draw,shape=circle]
+
+\draw (0.5,0.5)  -- (0.5,-0.5);
+\draw (0.5,0.2) node[draw=none,rectangle,label=above:$0$](a){};
+\draw (0.5,0) node[draw=none,rectangle,label=below:$u|_{x=0}$](a){};
+\draw (0,0) node[circle,inner sep=2pt,label=above:$u_0$](a){} -- (1,0) 
+node[circle,fill,inner sep=1pt,label=above:$u_1$](b){};
+\draw (1,0) node[circle,fill,inner sep=1pt](a){} -- (2,0) 
+node[circle,fill,inner sep=1pt,label=above:$u_2$](b){};
+\draw (1.5,0.25) -- (1.5,-0.25);
+\draw (2,0) node[circle,fill,inner sep=1pt](a){} -- (3,0) 
+node[circle,fill,inner sep=1pt,label=above:$u_3$](b){};
+\draw (2.5,0.25) -- (2.5,-0.25);
+\draw (3,0) node[circle,fill,inner sep=1pt](a){} -- (4,0) 
+node[circle,fill,inner sep=1pt,label=above:$u_4$](b){};
+\draw (3.5,0.5) -- (3.5,-0.5);
+\draw (3.5,0.2) node[draw=none,rectangle,label=above:$\Gamma$](a){};
+\draw (3.5,0.4) node[draw=none,rectangle,label=below:${u|_{x=\Gamma}=\gamma}$](a){};
+\draw (4,0) node[circle,fill,inner sep=1pt](a){} -- (5,0) 
+node[circle,fill,inner sep=1pt,label=above:$u_5$](b){};
+\draw (4.5,0.25) -- (4.5,-0.25);
+\draw (5,0) node[circle,fill,inner sep=1pt](a){} -- (6,0) 
+node[circle,fill,inner sep=1pt,label=above:$u_6$](b){};
+\draw (5.5,0.25) -- (5.5,-0.25);
+\draw (6,0) node[circle,fill,inner sep=1pt](a){} -- (7,0) 
+node[circle,inner sep=2pt,label=above:$u_7$](b){};
+\draw (6.5,0.5) -- (6.5,-0.5);
+\draw (6.5,0.2) node[draw=none,rectangle,label=above:$1$](a){};
+\draw (6.5,0) node[draw=none,rectangle,label=below:$u|_{x=1}$](a){};
+
+   \end{tikzpicture}
+     \caption{1-D line before domain decomposition. \label{fig:4.1}}
+  \end{figure}

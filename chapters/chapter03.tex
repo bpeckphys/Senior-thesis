@@ -1,14 +1,14 @@
-The most natural place to start, although not the easiest to motivate, is the 1-dimensional problem. I will show that the equations using a second-order central-difference approximation along a 1-dimensional domain interface ensure that the values at the boundary of two nodes are equivalent. Subsequently, I will demonstrate that this extends naturally to 2-dimensional problems.
+The most natural place to start, although not the easiest to motivate, is the 1-dimensional problem. I will show that the equations arising from an overlapping domain decomposition using a second-order central-difference approximation along a 1-dimensional domain interface with a node centered approach ensures that the values shared at the boundary of two sub-domains are equivalent. Subsequently, I will demonstrate that this extends naturally to 2-dimensional problems.
 
-We start by analyzing figure \ref{fig:1dgrid} which depicts a line and decomposing it into two sub-domains in the subsequent figure \ref{fig:1dgriddecomp}. Nodes $u_0$ and $u_8$ are ghost nodes used to solve along the line from $u_1$ to $u_7$. Each node can be approximated using the central-difference approximation
+We start by analyzing figure \ref{fig:1dgrid} which depicts a line and decomposing it into two sub-domains in the subsequent figure \ref{fig:1dgriddecomp}. Nodes $u_0$ and $u_8$ are ghost nodes used to solve along the line from $u_1$ to $u_7$. Each node can be approximated using the central-difference approximation in equation \ref{eq:3.1}.
 
-\begin{equation}
+\begin{equation}\label{eq:3.1}
 	u''(x_{j}) \cong \frac{1}{h^2}[u_{j-1} - 2u_{j} + u_{j+1}]
 \end{equation} 
 
 \input{figures/figure_1}
 
-In figure \ref{fig:1dgriddecomp}, the domain has been decomposed into two parts, $\Omega_0$ and $\Omega_1$, that share the boundary $u_4^0 = u_0^1$. Each of the sub-domains then have two ghost nodes such that on the first iteration $u_5^0$ is set to an initial guess and on each subsequent iteration $u_{-1}^1$ receives its value from $u_3^0$ and $u_5^0$ receives its value from $u_1^1$.
+In figure \ref{fig:1dgriddecomp}, the domain has been decomposed into two parts, $\Omega_0$ and $\Omega_1$, that share the boundary $u_4^0 = u_0^1$. Each of the sub-domains then have two ghost nodes such that on each iteration $u_{-1}^1$ receives its value from $u_3^0$ and $u_5^0$ receives its value from $u_1^1$.
 \input{figures/figure_2}
 
 This decomposition leads to the following equations on the boundary when solving the Poisson problem where $f$ is the exact solution at each point.
@@ -43,7 +43,7 @@ Now if we both solve \ref{eq:3.3} and \ref{eq:3.5} for $u_{02}^1$ and $u_{42}^0$
 Adding and subtracting these equations together and then plugging into \ref{eq:3.4} we arrive at the final result we are looking for. 
 \input{eqsystems/sys_7}
 
-For the sake of thoroughness, we will extend this to 4 sub-domains as shown in the next two figures. Similar to our proof that the boundary values between $\Omega_0$ and $\Omega_1$ are equivalent, it can be shown that the boundary values between $\Omega_0$ and $\Omega_2$ are equivalent as are those between $\Omega_1$ and $\Omega_3$. What remains then is to show that the boundary value shared by all 4 nodes is equivalent for each; that is, $u_{43}^0 = u_{03}^1 = u_{40}^2 = u_{00}^3$.
+For the sake of thoroughness, we will extend this to 4 sub-domains in 4 quadrants as shown in the next two figures. Similar to our proof that the boundary values between $\Omega_0$ and $\Omega_1$ are equivalent, it can be shown that the boundary values between $\Omega_0$ and $\Omega_2$ are equivalent as are those between $\Omega_1$ and $\Omega_3$. What remains then is to show that the boundary value shared by all 4 nodes is equivalent for each; that is, $u_{43}^0 = u_{03}^1 = u_{40}^2 = u_{00}^3$.
 \input{figures/figure_5}
 \input{figures/figure_6}
 
