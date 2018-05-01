@@ -8,11 +8,27 @@ We can define $\gamma$ to be the average of its neighbor nodes as shown in equat
 	\gamma = \frac{u_{j} + u_{j+1}}{2}
 \end{equation}
 
+In figure \ref{fig:4.2} we have decomposed the domain into two sub-domains, $\Omega_0$ and $\Omega_1$. Unlike the node-centered case, the two sub-domains do not share any nodes or receive any values for ghost nodes. Instead we enforce equation \ref{eq:4.1} as a Dirichlet boundary condition between the two sub-domains. 
 
-
-In figure \ref{fig:4.2} we have decomposed the domain into two sub-domains, $\Omega_0$ and $\Omega_1$. Unlike the node-centered case, the two sub-domains do not share any nodes or receive any values for ghost nodes.
-
+\pagebreak
 \input{figures/figure_8}
 
+The matrix system using the 3-point stencil before decomposition is shown below.
 
-This can be done by solving the Schur Complement system for the boundary values.
+\input{eqsystems/sys_10}
+
+From figure \ref{fig:4.2} we can see that on the boundary we have the following system of equations.
+
+\input{eqsystems/sys_11}
+
+Solving \ref{eq:4.4} for $u_0^1$ and $u_n^0$ and plugging into \ref{eq:4.2} and \ref{eq:4.3} respectively we obtain the system of equations below. These let us construct the subsequent decomposed matrix.
+
+\input{eqsystems/sys_12}
+\input{eqsystems/sys_13}
+
+This shows that if we know the $\gamma$ values, we can completely decouple the system into smaller systems that we can solve much faster and in parallel.
+
+
+
+
+

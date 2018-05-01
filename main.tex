@@ -23,6 +23,12 @@
 \tikzstyle{every node}=[draw,shape=circle]
 \usepackage{mathtools}
 \usepackage{listings}
+\makeatletter
+\renewcommand*\env@matrix[1][*\c@MaxMatrixCols c]{%
+  \hskip -\arraycolsep
+  \let\@ifnextchar\new@ifnextchar
+  \array{#1}}
+\makeatother
 
 \begin{document}
 
